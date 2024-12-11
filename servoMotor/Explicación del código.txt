@@ -1,0 +1,18 @@
+Explicación del código
+
+El código utiliza un sensor de ultrasonido y un servomotor para detectar la distancia a un objeto y mover el servomotor en función de esa distancia. A continuación se explica cada parte del código, incluyendo comentarios detallados sobre su funcionamiento.
+
+Detalle de funcionamiento
+
+    Biblioteca Servo y configuración:
+    La biblioteca Servo.h permite controlar fácilmente servomotores. Aquí se define un servomotor llamado ioe conectado al pin 4.
+
+    Sensor ultrasónico:
+    El sensor ultrasónico mide la distancia mediante un pulso ultrasónico enviado desde el pin TRIG. La señal de retorno se recibe en el pin ECHO. La duración del pulso recibido en el pin ECHO se convierte en distancia usando la fórmula estándar distancia = tiempo / 58.2.
+
+    Movimiento del servomotor:
+        Si un objeto está a 10 cm o menos, el servomotor se posiciona en 120 grados y permanece en esa posición durante 2 segundos.
+        Si la distancia es mayor a 10 cm, el servomotor se posiciona en 45 grados.
+
+    Flujo continuo:
+    El ciclo loop garantiza que la distancia se mida constantemente y se ajusten los ángulos del servomotor en tiempo real.

@@ -1,0 +1,14 @@
+Explicación del códio:
+
+    Definición de variables:
+    Se definen las constantes para los pines de los LEDs y el número de LEDs. Además, se crea un arreglo para los pines a los que están conectados los LEDs.
+
+    Función setup():
+    En esta función se configuran los pines de los LEDs como salidas utilizando un bucle for. También se inicializa la comunicación serial a 9600 baudios para monitorear los valores del sensor en el monitor serial.
+
+    Función loop():
+        Se lee el valor del sensor de sonido mediante analogRead(pinSensorSonido) y se guarda en la variable nivelRuido.
+        El valor crudo del sensor se muestra en el monitor serial.
+        Luego, el valor crudo se mapea de un rango de 0-1023 a un rango de 0-200 usando la función map(). Este valor mapeado representa el nivel de ruido ajustado.
+        El programa determina cuántos LEDs deben encenderse basándose en el valor mapeado del ruido. Para cada LED, se calcula un umbral (proporcional al índice del LED) y si el valor de ruido supera el umbral, el LED se enciende; si no, se apaga.
+        Después de manejar los LEDs, hay una pausa de 100 milisegundos para que el sistema no se actualice demasiado rápido.

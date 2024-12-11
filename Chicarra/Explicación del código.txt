@@ -1,0 +1,26 @@
+Explicación del código:
+
+    Declaración de variables:
+        sensorH1: Almacena el número del pin digital 9 al que está conectado el sensor.
+        ledPin: Almacena el número del pin digital 2 al que está conectado el LED.
+        buzzer: Almacena el número del pin analógico A1 al que está conectado el buzzer.
+
+    setup() (Configuración inicial):
+        Define el tipo de cada pin (entrada o salida).
+        Configura el pin del sensor como entrada con una resistencia pull-up interna, mientras que el LED y el buzzer se configuran como salidas.
+
+    loop() (Bucle principal):
+        Lee el estado del sensor digital.
+        Si el sensor detecta un estado bajo (por ejemplo, un evento como la activación del sensor), el LED se enciende y el buzzer se apaga.
+        Si el sensor detecta un estado alto (sin activación), el LED se apaga y el buzzer emite un tono con una frecuencia de 600 Hz.
+        
+Flujo lógico:
+
+    Al iniciar el programa: Configura los pines necesarios para los dispositivos conectados.
+    Durante la ejecución continua (loop):
+        Si el sensor detecta un cambio de estado (por ejemplo, algo bloqueando o activando el sensor):
+            Enciende el LED.
+            Apaga el buzzer.
+        Si el sensor no detecta activación:
+            Apaga el LED.
+            Enciende el buzzer y emite un tono específico.

@@ -1,0 +1,24 @@
+Explicación del código:
+
+    Definición de pines: Se asignan los pines 11, 10 y 9 a las variables rojo, verde y azul, respectivamente. Estos pines están conectados a los LEDs de color rojo, verde y azul del LED RGB.
+
+    setup():
+        pinMode(): Esta función se usa para configurar los pines de los LEDs como salidas, lo que significa que el Arduino enviará señales a estos pines para controlar los LEDs.
+
+    loop():
+        En el bucle principal, se utilizan analogWrite() para controlar el brillo de los LEDs. La función analogWrite() usa PWM para controlar la intensidad de la señal en los pines, lo que hace que el LED tenga un brillo proporcional al valor especificado (de 0 a 255).
+            analogWrite(rojo, 255): Enciende el LED rojo a su máxima intensidad.
+            analogWrite(azul, 2): Enciende el LED azul con una intensidad baja (casi apagado).
+            analogWrite(verde, 20): Enciende el LED verde con un brillo bajo.
+        Luego, delay(2000) introduce una pausa de 2 segundos antes de que el programa repita este proceso.
+
+    Bloques comentados:
+        Existen bloques de código comentados (con /* y */), lo que significa que no se ejecutan.
+        Estos bloques mostrarían diferentes configuraciones para los LEDs, incluyendo:
+            Un encendido completo de los LEDs con un brillo máximo.
+            El uso de digitalWrite(), que permite encender o apagar completamente los LEDs (no se usa PWM en este caso, solo valores 0 o 1).
+            El ajuste de valores para cambiar las intensidades de los colores de manera diferente.
+
+Este código está diseñado para controlar un LED RGB en un Arduino, haciendo que los colores cambien a través de los diferentes niveles de brillo.
+
+

@@ -1,0 +1,19 @@
+Explicación detallada del código:
+
+    Librerías Importadas:
+        #include <Wire.h>: Esta librería es necesaria para la comunicación I2C, que permite que el Arduino se comunique con dispositivos periféricos como la pantalla LCD.
+        #include <LiquidCrystal_I2C.h>: Esta librería facilita el control de pantallas LCD con interfaz I2C, lo que reduce el número de pines necesarios para conectar la pantalla.
+
+    Creación del Objeto LCD:
+        LiquidCrystal_I2C lcd(0x3F, 16, 2);: Se crea un objeto lcd para la pantalla, especificando la dirección I2C de la pantalla (en este caso 0x3F), el número de columnas (16) y filas (2) de la pantalla.
+
+    Configuración en setup():
+        lcd.init();: Inicializa la pantalla LCD.
+        lcd.backlight();: Activa la retroiluminación de la pantalla para que sea legible.
+        lcd.print("Hola Mundo");: Muestra el mensaje "Hola Mundo" en la pantalla en la primera fila.
+
+    Ciclo Principal en loop():
+        lcd.setCursor(0, 1);: Establece el cursor en la segunda fila, primera columna, para empezar a escribir el tiempo transcurrido.
+        lcd.print(millis() / 1000);: Muestra los segundos transcurridos desde que se inició el Arduino (usando millis() que retorna el tiempo en milisegundos).
+        lcd.print(" segundos");: Muestra el texto " segundos" después del número de segundos en la pantalla.
+        delay(100);: Pausa la ejecución del código durante 100 milisegundos, lo que limita la frecuencia de actualización de la pantalla a aproximadamente 10 veces por segundo.

@@ -1,0 +1,16 @@
+Explicación Del código:
+
+    Librerías y configuración del LCD:
+        #include <Wire.h> importa la biblioteca necesaria para la comunicación I2C, que permite que el Arduino se comunique con el LCD.
+        #include <LiquidCrystal_I2C.h> importa la biblioteca específica para manejar el LCD con interfaz I2C.
+        Se crea el objeto lcd usando la dirección I2C (0x3F) y las dimensiones del LCD (16 columnas y 2 filas).
+
+    setup():
+        En la función setup(), el LCD se inicializa (lcd.init()) y se enciende la retroiluminación (lcd.backlight()).
+        Luego, muestra el texto "Hola Mundo" en la pantalla LCD.
+
+    loop():
+        Dentro de la función loop(), se coloca el cursor en la segunda fila y primera columna (lcd.setCursor(0, 1)).
+        Se imprime el tiempo transcurrido en segundos desde que se inició el Arduino. Esto se obtiene usando millis(), que devuelve el tiempo en milisegundos desde que comenzó el programa. Luego se divide entre 1000 para convertirlo en segundos.
+        Después del número de segundos, se imprime la palabra "segundos".
+        El delay(100) se usa para hacer una pausa de 100 milisegundos antes de actualizar la pantalla, lo que ayuda a evitar un parpadeo muy rápido.

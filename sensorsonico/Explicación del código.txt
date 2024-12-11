@@ -1,0 +1,18 @@
+Explicación textual del código:
+
+    Inclusión de la librería LiquidCrystal: Se incluye la librería para controlar la pantalla LCD.
+
+    Definición de pines:
+        Se definen los pines para el sensor ultrasonido (trig y eco) y para el LED.
+        Se configuran los pines de la pantalla LCD.
+
+    Configuración del setup():
+        Se configura el sensor ultrasonido (trig como salida, eco como entrada) y el LED (como salida).
+        Se inicia la comunicación serial para imprimir los valores de distancia en el monitor serial.
+        Se inicia la pantalla LCD y se imprime un mensaje de saludo. Después, se limpia la pantalla.
+
+    Funcionamiento del loop():
+        Se envía una señal ultrasonido desde el pin trig.
+        Se mide el tiempo que tarda el eco en regresar, lo que se utiliza para calcular la distancia.
+        Se imprime la distancia en el monitor serial.
+        Dependiendo de la distancia medida, se enciende o apaga un LED. Si la distancia es menor o igual a 20 cm, el LED se enciende, de lo contrario, se apaga.

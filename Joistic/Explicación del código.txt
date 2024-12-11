@@ -1,0 +1,20 @@
+Explicación del código:
+
+    Variables x y y: Estas variables se usan para almacenar los valores leídos desde los pines analógicos A0 y A1. Los valores de los pines analógicos varían de 0 a 1023, lo que representa el rango de voltaje entre 0 y 5 V.
+
+    Configuración inicial (función setup):
+        Se inicia la comunicación serial con Serial.begin(9600); para permitir que el Arduino envíe información al monitor serial.
+        Se configura el modo de los pines 9, 10, 11 y 12 como salidas con pinMode.
+
+    Bucle principal (función loop):
+        Se leen los valores de los pines A0 (x) y A1 (y) usando analogRead, que devuelve un valor entre 0 y 1023.
+        Esos valores se envían al monitor serial con Serial.print y Serial.println, lo que permite observar los valores en el monitor serial.
+        Se agregan condiciones if para controlar los pines digitales 9, 10, 11 y 12 según los valores de x y y. Si los valores son mayores o menores que ciertos umbrales, se encienden o apagan los pines digitales correspondientes.
+
+    Condiciones y control de pines digitales:
+        Si x es mayor que 520, se enciende el pin 9; si no, se apaga.
+        Si x es menor que 500, se enciende el pin 10; si no, se apaga.
+        Si y es mayor que 1020, se enciende el pin 11; si no, se apaga.
+        Si y es menor que 500, se enciende el pin 12; si no, se apaga.
+
+    Retraso de 200 ms: delay(200); hace que el programa espere 200 milisegundos antes de realizar otra iteración del bucle loop.

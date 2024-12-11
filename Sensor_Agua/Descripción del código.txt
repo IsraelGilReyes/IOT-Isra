@@ -1,0 +1,21 @@
+Descripción del código
+
+Este código es para una placa Arduino. Controla tres LED de colores (verde, amarillo y rojo) basándose en el valor leído de un sensor conectado al pin analógico A5. Según el valor del sensor, se enciende un LED específico durante 1 segundo.
+
+Explicación del funcionamiento
+
+    Configuración inicial (setup):
+        Configura los pines de los LEDs como salidas.
+        Configura el pin del sensor como entrada.
+        Inicia la comunicación serial para depuración.
+
+    Ciclo principal (loop):
+        Lee el valor analógico del sensor en activador.
+        Imprime este valor en el monitor serial para monitoreo.
+        En función del valor del sensor:
+            Enciende el LED verde si el valor está entre 400 y 550.
+            Enciende el LED amarillo si el valor está entre 551 y 650.
+            Enciende el LED rojo si el valor está entre 651 y 700.
+        Si el valor del sensor no está dentro de los rangos definidos, apaga todos los LEDs.
+
+

@@ -1,0 +1,13 @@
+Explicación del código:
+
+    Declaración de variables:
+        Se asignan pines de salida (13 a 8) a las variables led1, led2, led3, led4, led5, led6 para controlar los LEDs. Además, se declara una variable del para especificar el tiempo de espera entre el encendido y apagado de cada LED (500 milisegundos).
+
+    Función setup:
+        Se configura cada pin como salida utilizando pinMode(), lo que permite controlar los LEDs.
+
+    Función loop:
+        El código se ejecuta de forma repetitiva. La secuencia de encender y apagar los LEDs se realiza en un ciclo for que se repite 4 veces:
+            Se encienden los LEDs en orden secuencial desde el led1 hasta el led6.
+            Después, los LEDs se apagan de forma inversa, comenzando desde el led5 hasta el led1.
+        Entre cada encendido y apagado de un LED, el programa espera 500 milisegundos usando delay(del).

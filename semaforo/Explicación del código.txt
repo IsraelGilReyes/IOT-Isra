@@ -1,0 +1,26 @@
+Explicación del código:
+
+    Definición de pines:
+        int rojo = 13;: Asigna el pin 13 para el LED rojo.
+        int amarillo = 10;: Asigna el pin 10 para el LED amarillo.
+        int verde = 8;: Asigna el pin 8 para el LED verde.
+
+    setup():
+        Aquí, se configura el modo de los pines como salidas, ya que se utilizarán para encender y apagar los LEDs:
+
+    pinMode(rojo, OUTPUT);     // LED rojo como salida
+    pinMode(amarillo, OUTPUT); // LED amarillo como salida
+    pinMode(verde, OUTPUT);    // LED verde como salida
+
+loop():
+
+    Esta función se ejecuta continuamente y es donde se realiza la secuencia de encendido y apagado de los LEDs:
+        LED verde: Se enciende durante 4 segundos y luego se apaga.
+        LED amarillo: Se enciende durante 2 segundos y luego se apaga.
+        Parpadeo rápido del LED amarillo: El LED amarillo parpadea 3 veces, encendiendo y apagando durante 300 milisegundos.
+        LED rojo: Se enciende durante 6 segundos y luego se apaga.
+
+Funciones utilizadas:
+
+    digitalWrite(pin, HIGH) y digitalWrite(pin, LOW) controlan el estado de los pines, encendiendo o apagando los LEDs.
+    delay(ms) pausa la ejecución del programa durante el tiempo especificado (en milisegundos).

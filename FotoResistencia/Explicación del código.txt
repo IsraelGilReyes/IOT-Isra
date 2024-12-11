@@ -1,0 +1,25 @@
+Explicación del código 
+
+Este código lee la intensidad de luz desde un sensor LDR, imprime ese valor en el monitor serial y enciende un LED si la luz es baja (por debajo de un cierto límite). Si la luz es alta (por encima del límite), apaga el LED.
+
+
+Variables:
+
+    ldr: Define el pin A5 como el pin de entrada del sensor LDR (fotoresistor).
+    valor: Almacena el valor que se lee desde el LDR, que será un número entre 0 y 1023 dependiendo de la intensidad de la luz.
+    led: El pin 13 está conectado a un LED, que se encenderá o apagará en función de la lectura del LDR.
+    limite: Es un valor que se usa para determinar cuándo el LED debe encenderse o apagarse. Si el valor del LDR es menor o igual a 100, el LED se enciende.
+
+setup():
+
+    Se inicializa la comunicación serial a 9600 baudios, lo que permite enviar datos desde el Arduino al monitor serial (para ver los valores leídos del LDR).
+    El pin conectado al LDR (A5) se configura como una entrada para poder leer los valores de luz.
+    El pin conectado al LED (13) se configura como salida para poder controlar su encendido y apagado.
+
+loop():
+
+    Dentro del ciclo principal, se lee el valor analógico del LDR con analogRead(ldr), lo que devuelve un número entre 0 (sin luz) y 1023 (luz máxima).
+    Ese valor se imprime en el monitor serial para observar los cambios en la intensidad de luz.
+    Después de esperar 1 segundo (delay(1000)), se evalúa si el valor del LDR es menor o igual al umbral definido en limite (100):
+        Si es así, se enciende el LED (digitalWrite(led, HIGH)).
+        Si el valor es mayor que el umbral, el LED se apaga (digitalWrite(led, LOW)).

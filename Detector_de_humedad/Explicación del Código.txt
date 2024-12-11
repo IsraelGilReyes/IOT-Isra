@@ -1,0 +1,17 @@
+Explicación general del código
+
+Este programa utiliza un microcontrolador  para leer el estado de un sensor digital conectado a un pin específico y, dependiendo de su valor, enciende o apaga un LED conectado a otro pin.
+
+    const int sensorH1 = 9;: Define el pin 9 como la entrada del sensor de humedad.
+    const int led = 2;: Define el pin 2 como el pin al que está conectado el LED.
+    void setup(): Esta función se ejecuta una sola vez cuando el programa comienza. En ella:
+        pinMode(sensorH1, INPUT_PULLUP);: Configura el pin 9 como entrada con una resistencia pull-up interna. Esto significa que el pin estará en un estado HIGH por defecto, y se activará a LOW cuando el sensor detecte humedad (si el sensor funciona de esta manera).
+        pinMode(led, OUTPUT);: Configura el pin 2 como salida para controlar el encendido o apagado del LED.
+    void loop(): Esta función se ejecuta de manera repetitiva mientras el programa esté corriendo:
+        int estadoP1 = digitalRead(sensorH1);: Lee el valor del sensor de humedad. Si el sensor está en estado de humedad, se espera un valor LOW.
+        if(estadoP1 == LOW): Si el sensor detecta humedad (estado LOW), se ejecuta la siguiente instrucción:
+            digitalWrite(led, HIGH);: Enciende el LED.
+        else: Si el sensor no detecta humedad (estado HIGH), se ejecuta la instrucción siguiente:
+            digitalWrite(led, LOW);: Apaga el LED.
+
+Este código proporciona una forma básica de activar un LED en función de la lectura de un sensor de humedad, encendiendo el LED cuando se detecta humedad y apagándolo cuando no se detecta.

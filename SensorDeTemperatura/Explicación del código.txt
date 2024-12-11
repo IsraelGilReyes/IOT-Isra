@@ -1,0 +1,21 @@
+Explicación del código:
+
+    Inclusión de bibliotecas:
+        Adafruit_Sensor.h: Biblioteca base para la mayoría de los sensores de Adafruit.
+        DHT.h y DHT_U.h: Bibliotecas específicas para trabajar con sensores de temperatura y humedad de la serie DHT.
+
+    Definición de variables:
+        led: Pin del LED, configurado como el pin 3.
+        SENSOR: Pin al que está conectado el sensor DHT11, configurado como el pin 4.
+        temperatura y humedad: Variables para almacenar los valores leídos del sensor.
+
+    Configuración inicial (función setup):
+        Se inicia la comunicación serial con Serial.begin(9600).
+        Se inicializa el sensor DHT con dht.begin().
+        Se configura el pin del LED como salida con pinMode(led, OUTPUT).
+
+    Bucle principal (función loop):
+        Se leen los valores de temperatura y humedad con dht.readTemperature() y dht.readHumidity().
+        Se imprimen estos valores en el monitor serial.
+        Se utiliza delay(500) para esperar medio segundo antes de la siguiente lectura.
+        Se verifica si la temperatura es mayor o igual a 28 grados Celsius. Si es así, el LED se enciende (se pone el pin led en HIGH); si no, se apaga (se pone el pin led en LOW).

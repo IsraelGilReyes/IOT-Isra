@@ -1,0 +1,14 @@
+Explicación del código
+
+Este código está diseñado para medir la distancia utilizando un sensor ultrasónico (HC-SR04) y mostrarla en una pantalla LCD con retroiluminación I2C, además de encender un LED cuando la distancia medida sea menor o igual a 20 cm.
+
+Descripción de lo que hace cada parte del código:
+
+    Configuración de pines: Se configuran los pines del sensor ultrasónico (TRIG y ECO) y el LED como salidas, y el pin ECO como entrada.
+    Comunicación y LCD: Inicializa la pantalla LCD y la comunicación serial para depuración.
+    Medición de distancia:
+        Se envía un pulso de 10 microsegundos desde el pin TRIG.
+        Se mide el tiempo de retorno del pulso (eco) desde el pin ECO usando la función pulseIn.
+        La distancia se calcula dividiendo la duración del pulso por 58.2, que es una constante derivada de la velocidad del sonido.
+    Visualización de resultados: La distancia calculada se muestra tanto en la consola serial como en la pantalla LCD.
+    Control del LED: Si la distancia medida es menor o igual a 20 cm, se enciende el LED durante 1 segundo. Si la distancia es mayor, el LED se apaga.

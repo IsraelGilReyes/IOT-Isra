@@ -1,0 +1,18 @@
+Explicación del código
+
+Este código controla el encendido de tres LEDs (conectados a pines digitales 13, 12 y 11) en un patrón cíclico basado en el estado de un botón conectado al pin digital 7. Los LEDs se encienden de forma secuencial mientras se presiona el botón, y se apagan cuando el botón no está presionado.
+
+Explicación del flujo
+
+    Variables iniciales: Se declaran los pines de los LEDs y una variable identificador que controla cuál LED se enciende en el ciclo.
+    setup: Configura los pines de los LEDs como salidas para permitir que el programa controle su estado.
+    loop:
+        Lectura del botón: Verifica si el botón conectado al pin 7 está presionado (HIGH).
+        Ciclo de encendido de LEDs: Dependiendo del valor de identificador:
+            Enciende uno de los LEDs y apaga los demás.
+            Usa un breve retraso (delay(200)) para que el cambio sea visible.
+            Cambia el valor de identificador para avanzar al siguiente estado.
+        Reinicio del ciclo: Cuando identificador alcanza el valor 2, se reinicia a 0 para repetir el patrón.
+        Estado de reposo: Si el botón no está presionado, todos los LEDs se apagan.
+
+
